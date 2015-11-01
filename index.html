@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style type="text/css">
+  	body {font-size: 12px; font-family: sans-serif}
+  	.kont {margin: 20px auto 0 auto; width: 250px;}
+  	.kijelzo, .bill {width: 100%;float: left;}
+  	.kijelzo {text-align: right; width: 92%; padding: 4%; height: 22px; line-height: 22px; font-size: 22px; font-weight: bold; border: 1px solid #666}
+  	.bill {border: 1px solid #666;}
+  	.bill span.btn {width: 22%; margin: 1%; display: block; float: left;padding: 4% 0;border: 1px solid #ccc; border-radius: 3px;text-align: center; font-size: 16px; }
+  	.bill .btn.newline {clear: both;}
+  	.bill .btn.right {float: right}
+  </style>
+</head>
+<body ng-app="szamologepApp">
+	<section class="kozep" ng-controller="szamologepCtrl">
+		<div class="kont">
+			<div class="kijelzo">{{eredmeny}}</div>
+			<div class="bill">
+				<span class="btn fn right" ng-click="clkClear()">C</span>
+				<span class="btn nmbr newline" data-value="7" ng-click="clkNumber($event)">7</span>
+				<span class="btn nmbr" data-value="8" ng-click="clkNumber($event)">8</span>
+				<span class="btn nmbr" data-value="9" ng-click="clkNumber($event)">9</span>
+				<span class="btn" ng-click="clkFn($event, '/')">/</span>
+				<span class="btn nmbr" data-value="4" ng-click="clkNumber($event)">4</span>
+				<span class="btn nmbr" data-value="5" ng-click="clkNumber($event)">5</span>
+				<span class="btn nmbr" data-value="6" ng-click="clkNumber($event)">6</span>
+				<span class="btn" ng-click="clkFn($event, '*')">*</span>
+				<span class="btn nmbr" data-value="1" ng-click="clkNumber($event)">1</span>
+				<span class="btn nmbr" data-value="2" ng-click="clkNumber($event)">2</span>
+				<span class="btn nmbr" data-value="3" ng-click="clkNumber($event)">3</span>
+				<span class="btn" ng-click="clkFn($event, '-')">-</span>
+				<span class="btn nmbr" data-value="." ng-click="clkNumber($event)">.</span>
+				<span class="btn nmbr" data-value="0" ng-click="clkNumber($event)">0</span>
+				<span class="btn" ng-click="clkEval($event)">=</span>
+				<span class="btn" ng-click="clkFn($event, '+')">+</span>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src="angular-1.4.7/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
