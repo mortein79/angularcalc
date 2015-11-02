@@ -60,6 +60,12 @@
       
       
     }])
+
+    .directive('szgDisplay', function(){
+        return {
+            templateUrl: 'templates/szg-display.html'
+        }
+    })
     
     
 })(window.angular);
