@@ -60,6 +60,16 @@
             $scope.szdisplay.operator = ''
         }
 
+        $scope.szgKeyup = function(ev)
+        {
+            var res = $filter('filter')([
+                48,49,50,51,52,53,54,55,56,57, // 0 - 9
+                96,97,98,99,100,101,102,103,104,105, // 0 - 9
+                107,109,111,106, // + - / *
+                51,173,54,173 // + - / *
+            ], ev.keyCode)
+            console.log(res)
+        }
     
       
       
@@ -70,6 +80,6 @@
             templateUrl: 'templates/szg-display.html'
         }
     })
-    
+
     
 })(window.angular);
